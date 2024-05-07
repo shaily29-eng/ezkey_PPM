@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: kafka
+spec:
+  replicas: 3
+  serviceName: kafka-cluster
+  selector:
+    matchLabels:
+      app: kafka-cluster
+  template:
+    metadata:
+      labels:
+        app: kafka-cluster
+    spec:
+      hostname: kafka
+      containers:
+        - name: kafka
+          image: bitnami/kafka:latest
+          securityContext:
+            runAsUser: 0
+          ports:
+            - containerPort: 9092
+          env:
+            - name: KAFKA_CFG_ZOOKEEPER_CONNECT
+              value: "zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2181,zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2181,zookeeper-2.zookeeper-cluster.default.svc.cluster.local:2181"
+            - name: ALLOW_PLAINTEXT_LISTENER
+              value: "yes"

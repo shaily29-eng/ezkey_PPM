@@ -1,0 +1,25 @@
+.whole-form {
+  height: 100%;
+  width: 50%;
+  margin: auto;
+}
+
+.whole-form h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.whole-form p {
+  margin-bottom: 12px;
+}
+
+.servicelines {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.servicelines li {
+  margin-bottom: 8px;
+}

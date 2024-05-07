@@ -1,0 +1,9 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "globalHeaders": {
+    "Access-Control-Allow-Origin": "https://proud-smoke-00d88c21e-3.westus2.5.azurestaticapps.net",
+    "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
+  }
+}

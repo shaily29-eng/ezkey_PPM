@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discovery-server
+spec:
+  selector:
+    matchLabels:
+      app: discovery-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: discovery-server
+    spec:
+      containers:
+        - name: discovery-server
+          image: ezkey.azurecr.io/discovery-server:latest
+          ports:
+            - containerPort: 8761
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: acr-secret

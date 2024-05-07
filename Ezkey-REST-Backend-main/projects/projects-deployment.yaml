@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projects
+spec:
+  selector:
+    matchLabels:
+      app: projects
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: projects
+    spec:
+      containers:
+        - name: auth
+          image: ezkey.azurecr.io/projects:latest
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: acr-secret

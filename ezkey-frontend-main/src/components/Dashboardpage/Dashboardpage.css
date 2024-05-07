@@ -1,0 +1,58 @@
+h1.dashboard {
+  text-align: center;
+  color: #002f87;
+  font-weight: bold;
+  font-size: 50px;
+  padding: None;
+}
+
+.projects {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.card {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 320px;
+  height: 200px;
+  /* background-color: #ffffff; */
+  border-radius: 10px;
+  cursor: pointer;
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  margin: 20px;
+  box-shadow: 1px 1px 1px 1px rgba(20, 20, 20, 0.4);
+}
+
+.allprojects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.addcard {
+  background-color: #dfe6e9;
+  text-align: center;
+  /* vertical-align: middle; */
+  line-height: 140px;
+  font-size: 200px;
+  padding-top: 20px;
+}
+
+.projtitle {
+  margin-left: 40px;
+  font-size: 35px;
+}
+
+a.addplus:link {
+  color: #b2bec3;
+}
+
+a.addplus:visited {
+  color: #b2bec3;
+}

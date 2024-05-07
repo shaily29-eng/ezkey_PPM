@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: zookeeper
+spec:
+  serviceName: zookeeper-cluster
+  replicas: 3
+  selector:
+    matchLabels:
+      app: zookeeper-cluster
+  template:
+    metadata:
+      labels:
+        component: zookeeper-cluster
+        app: zookeeper-cluster
+    spec:
+      containers:
+        - name: zookeeper
+          image: bitnami/zookeeper:latest
+          ports:
+            - containerPort: 2181
+            - containerPort: 2888
+            - containerPort: 3888
+          env:
+            - name: ALLOW_ANONYMOUS_LOGIN
+              value: "yes"
+            - name: ZOO_SERVERS
+              value: "zookeeper-cluster.default.svc.cluster.local:2888:3888"

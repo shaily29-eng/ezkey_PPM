@@ -1,0 +1,11 @@
+pluginManagement {
+    plugins {
+        id 'org.jetbrains.kotlin.jvm' version '1.9.22'
+    }
+}
+rootProject.name = 'Ezkey-REST-Backend'
+include 'discovery-server'
+include 'api-gateway'
+include 'auth'
+include 'keycloak-server'
+include 'projects'
